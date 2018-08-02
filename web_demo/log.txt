@@ -1,0 +1,34 @@
+-------------------
+$ git init                              # 初始化本地代码仓
+$ git add .                             # 添加本地代码
+$ git commit -m "add local source"      # 提交本地代码
+$ git pull origin master                # 下载远程代码
+$ git merge master                      # 合并master分支
+$ git push -u origin master             # 上传代码
+---------------------------
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+
+vi readme.txt
+进入VIM编辑器,可以新建文件也可以修改文件
+如果这个文件，以前是没有的，则为新建，则下方有提示为新文件。
+
+按ESC键 跳到命令模式，然后：
+
+:w 保存文件但不退出vi 
+:w file 将修改另外保存到file中，不退出vi 
+:w! 强制保存，不推出vi 
+:wq 保存文件并退出vi 
+:wq! 强制保存文件，并退出vi 
+q: 不保存文件，退出vi 
+:q! 不保存文件，强制退出vi 
+:e! 放弃所有修改，从上次保存文件开始再编辑
