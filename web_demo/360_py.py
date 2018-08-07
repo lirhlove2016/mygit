@@ -12,8 +12,8 @@ ads_num_require = 8
 req_url = "http://www.haosou.com/s?ie=utf-8&shb=1&src=360sou_newhome&q=%E9%B2%9C%E8%8A%B1"
 # 打开浏览器
 
-#browser = webdriver.Chrome()
-browser = webdriver.Firefox()
+browser = webdriver.Chrome()
+#browser = webdriver.Firefox()
 # 开始请求
 browser.get(req_url)
 # 获取所有的广告
