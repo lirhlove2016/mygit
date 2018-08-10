@@ -1,0 +1,36 @@
+python,allure报告
+1.python库install
+   pip install pytest
+   pip install pytest-allure-adaptor
+2.插件allure jenkins plugin
+3.系统配置，allurer report，
+            key:WORKSPACE
+			VALUE:E:/mysoft/space/jenkins_space/Xpytest
+4.job
+cd E:/mysoft/space/jenkins_space/Xpytest
+pytest test_div.py --alluredir E:/mysoft/space/jenkins_space/Xpytest/report
+或
+cd E:/mysoft/space/jenkins_space/Xpytest
+pytest test_div.py --alluredir ${WORKSPACE}/report
+
+python3 -m pytest test_div.py --alluredir ${WORKSPACE}/report
+
+构建后：report:
+     E:/mysoft/space/jenkins_space/Xpytest/report
+	 
+-----
+1.生成log文件
+	>pytest test_div.py --resultlog=./report/log.txt
+2.生成JunitXML文件                        
+	> py.test test_class.py  --junitxml=./log.xml
+3.创建测试用例的URL                                                
+	> py.test test_class.py  --pastebin=all
+4.生成html测试报告                              
+	需要安装pytest的扩展--pytest-html。
+	> pip install pytest-html
+	cmd命令提示符下执行测试文件：
+	>python3 -m  test_class.py --html=./report/report.html
+
+参考：
+https://blog.csdn.net/liuchunming033/article/details/79624474
+
