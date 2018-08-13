@@ -15,7 +15,7 @@ pytest test_div.py --alluredir ${WORKSPACE}/report
 
 python3 -m pytest test_div.py --alluredir ${WORKSPACE}/report
 
-构建后：report:
+构建后：report: //此处为目录名，要设置对
      E:/mysoft/space/jenkins_space/Xpytest/report
 	 
 -----
@@ -31,6 +31,10 @@ python3 -m pytest test_div.py --alluredir ${WORKSPACE}/report
 	cmd命令提示符下执行测试文件：
 	>python3 -m  test_class.py --html=./report/report.html
 
+5.cmd进入目录testcase
+python3 -m pytest test_ywb_addorder.py --html=../report/report.html
+python3 -m pytest test_ywb_addorder.py --resultlog=../report/log.txt
+	
 参考：
 https://blog.csdn.net/liuchunming033/article/details/79624474
 
