@@ -34,7 +34,17 @@ python3 -m pytest test_div.py --alluredir ${WORKSPACE}/report
 5.cmd进入目录testcase
 python3 -m pytest test_ywb_addorder.py --html=../report/report.html
 python3 -m pytest test_ywb_addorder.py --resultlog=../report/log.txt
+
+python3 -m pytest test_ywb_addorder.py --alluredir ../report
 	
 参考：
 https://blog.csdn.net/liuchunming033/article/details/79624474
+
+cd D:/workdtation/jenkins_space/python_pytest_report_test
+d:
+python3 -m pytest test_div.py --alluredir  
+D:/workdtation/jenkins_space/python_pytest_report_test/report
+report
+
+
 
