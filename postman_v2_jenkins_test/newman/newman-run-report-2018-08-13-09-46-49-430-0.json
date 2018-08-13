@@ -1,0 +1,649 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "e09b18ed-bd81-1ec4-cc15-a580b8e13147"
+    },
+    "item": [
+      {
+        "id": "c03ac5dd-3be4-4b25-8204-17c8e61de7de",
+        "name": "1.业务宝-下正式订单--22",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "businessTreasure",
+              "api",
+              "order",
+              "addOrderQuery"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "data",
+                "value": "{\"accountId\":\"809\",\"address\":\"北京市市辖区朝阳区还得大家庭教育基金会\",\"area\":\"100\",\"b_dosage\":\"\",\"city\":\"市辖区\",\"cityCode\":\"110100\",\"county\":\"朝阳区\",\"countyCode\":\"110105\",\"cropId\":\"2\",\"crops_highly\":\"1.5米及其以下\",\"crops_name\":\"中稻\",\"customer\":\"3\",\"detailsAddress\":\"北京市北京市朝阳区望京\",\"drugType\":\"0,1,2,6\",\"farmlandArea\":\"100\",\"formalType\":\"1\",\"guideName\":\"小八路\",\"guidePhone\":\"14430036003\",\"invoice\":\"2\",\"latitude\":\"39.995197\",\"longitude\":\"116.466485\",\"discountRatio\":\"100\",\"assembledAddress\":\"北京市北京市朝阳区望京\",\"isLongReserve\":\"1\",\"imgNote\":\"[\\\"http:\\/\\/farmlandbucketstest.oss-cn-beijing.aliyuncs.com\\/b3dc8aee8b604f0c97d6989f8c7fb324\\\"]\",\"medicineService\":\"0\",\"salesmanNote\":\"\",\"settlementPrice\":\"10.0\",\"assembledAddressLatitude\":\"39.995197\",\"assembledAddressLongitude\":\"116.466485\",\"days\":\"1\",\"sprayingTimeStamp\":\"1533916800\",\"medicineUrl\":\"\",\"name\":\"小八路\",\"orderType\":\"1\",\"order_money\":\"1000\",\"phone\":\"14430036003\",\"province\":\"北京市\",\"provinceCode\":\"110000\",\"salesmanId\":\"s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc\",\"spraying_time\":\"2018-08-11  至2018-08-11 \",\"teleAddress\":\"北京市北京市朝阳区望京\",\"type\":\"1\",\"unit_price\":\"10.0\",\"userType\":\"0\",\"weatherId\":\"7bac980e-aa9d-4eb0-bbfe-7e3ec1f0354d\"}"
+              },
+              {
+                "key": "token",
+                "value": "a4f7c72ad7704d87ab900c3068226a55"
+              },
+              {
+                "key": "access_phone",
+                "value": "18301212965"
+              },
+              {
+                "key": "userId",
+                "value": "s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "e09b18ed-bd81-1ec4-cc15-a580b8e13147",
+      "name": "导出",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "befd4f05-4a4c-4206-9dec-88324481c495",
+    "values": []
+  },
+  "globals": {
+    "id": "e19c6e15-3186-4be7-8918-9c27b9bd6e0d",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 772,
+      "started": 1534153608609,
+      "completed": 1534153609417
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "60477820-722a-4241-88c4-f7bf1b2a2d9a",
+          "httpRequestId": "cb93754c-b186-4b4d-9db9-03fc8c1d0a8c"
+        },
+        "item": {
+          "id": "c03ac5dd-3be4-4b25-8204-17c8e61de7de",
+          "name": "1.业务宝-下正式订单--22",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "businessTreasure",
+                "api",
+                "order",
+                "addOrderQuery"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "data",
+                  "value": "{\"accountId\":\"809\",\"address\":\"北京市市辖区朝阳区还得大家庭教育基金会\",\"area\":\"100\",\"b_dosage\":\"\",\"city\":\"市辖区\",\"cityCode\":\"110100\",\"county\":\"朝阳区\",\"countyCode\":\"110105\",\"cropId\":\"2\",\"crops_highly\":\"1.5米及其以下\",\"crops_name\":\"中稻\",\"customer\":\"3\",\"detailsAddress\":\"北京市北京市朝阳区望京\",\"drugType\":\"0,1,2,6\",\"farmlandArea\":\"100\",\"formalType\":\"1\",\"guideName\":\"小八路\",\"guidePhone\":\"14430036003\",\"invoice\":\"2\",\"latitude\":\"39.995197\",\"longitude\":\"116.466485\",\"discountRatio\":\"100\",\"assembledAddress\":\"北京市北京市朝阳区望京\",\"isLongReserve\":\"1\",\"imgNote\":\"[\\\"http:\\/\\/farmlandbucketstest.oss-cn-beijing.aliyuncs.com\\/b3dc8aee8b604f0c97d6989f8c7fb324\\\"]\",\"medicineService\":\"0\",\"salesmanNote\":\"\",\"settlementPrice\":\"10.0\",\"assembledAddressLatitude\":\"39.995197\",\"assembledAddressLongitude\":\"116.466485\",\"days\":\"1\",\"sprayingTimeStamp\":\"1533916800\",\"medicineUrl\":\"\",\"name\":\"小八路\",\"orderType\":\"1\",\"order_money\":\"1000\",\"phone\":\"14430036003\",\"province\":\"北京市\",\"provinceCode\":\"110000\",\"salesmanId\":\"s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc\",\"spraying_time\":\"2018-08-11  至2018-08-11 \",\"teleAddress\":\"北京市北京市朝阳区望京\",\"type\":\"1\",\"unit_price\":\"10.0\",\"userType\":\"0\",\"weatherId\":\"7bac980e-aa9d-4eb0-bbfe-7e3ec1f0354d\"}"
+                },
+                {
+                  "key": "token",
+                  "value": "a4f7c72ad7704d87ab900c3068226a55"
+                },
+                {
+                  "key": "access_phone",
+                  "value": "18301212965"
+                },
+                {
+                  "key": "userId",
+                  "value": "s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "businessTreasure",
+              "api",
+              "order",
+              "addOrderQuery"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 2475
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "data",
+                "value": "{\"accountId\":\"809\",\"address\":\"北京市市辖区朝阳区还得大家庭教育基金会\",\"area\":\"100\",\"b_dosage\":\"\",\"city\":\"市辖区\",\"cityCode\":\"110100\",\"county\":\"朝阳区\",\"countyCode\":\"110105\",\"cropId\":\"2\",\"crops_highly\":\"1.5米及其以下\",\"crops_name\":\"中稻\",\"customer\":\"3\",\"detailsAddress\":\"北京市北京市朝阳区望京\",\"drugType\":\"0,1,2,6\",\"farmlandArea\":\"100\",\"formalType\":\"1\",\"guideName\":\"小八路\",\"guidePhone\":\"14430036003\",\"invoice\":\"2\",\"latitude\":\"39.995197\",\"longitude\":\"116.466485\",\"discountRatio\":\"100\",\"assembledAddress\":\"北京市北京市朝阳区望京\",\"isLongReserve\":\"1\",\"imgNote\":\"[\\\"http:\\/\\/farmlandbucketstest.oss-cn-beijing.aliyuncs.com\\/b3dc8aee8b604f0c97d6989f8c7fb324\\\"]\",\"medicineService\":\"0\",\"salesmanNote\":\"\",\"settlementPrice\":\"10.0\",\"assembledAddressLatitude\":\"39.995197\",\"assembledAddressLongitude\":\"116.466485\",\"days\":\"1\",\"sprayingTimeStamp\":\"1533916800\",\"medicineUrl\":\"\",\"name\":\"小八路\",\"orderType\":\"1\",\"order_money\":\"1000\",\"phone\":\"14430036003\",\"province\":\"北京市\",\"provinceCode\":\"110000\",\"salesmanId\":\"s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc\",\"spraying_time\":\"2018-08-11  至2018-08-11 \",\"teleAddress\":\"北京市北京市朝阳区望京\",\"type\":\"1\",\"unit_price\":\"10.0\",\"userType\":\"0\",\"weatherId\":\"7bac980e-aa9d-4eb0-bbfe-7e3ec1f0354d\"}"
+              },
+              {
+                "key": "token",
+                "value": "a4f7c72ad7704d87ab900c3068226a55"
+              },
+              {
+                "key": "access_phone",
+                "value": "18301212965"
+              },
+              {
+                "key": "userId",
+                "value": "s1520841050603Sbb9ed6f5-91f5-4989-b14b-3aeafd7031fc"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "f825a7e5-84a3-4a30-933b-9ac94426a0d4",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 13 Aug 2018 09:46:47 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              67,
+              111,
+              100,
+              101,
+              34,
+              58,
+              48,
+              44,
+              34,
+              105,
+              110,
+              102,
+              111,
+              34,
+              58,
+              34,
+              230,
+              147,
+              141,
+              228,
+              189,
+              156,
+              230,
+              136,
+              144,
+              229,
+              138,
+              159,
+              34,
+              44,
+              34,
+              100,
+              97,
+              116,
+              97,
+              115,
+              34,
+              58,
+              123,
+              34,
+              112,
+              97,
+              121,
+              109,
+              101,
+              110,
+              116,
+              34,
+              58,
+              123,
+              34,
+              116,
+              114,
+              97,
+              100,
+              105,
+              110,
+              103,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              230,
+              156,
+              141,
+              229,
+              138,
+              161,
+              232,
+              180,
+              185,
+              34,
+              44,
+              34,
+              81,
+              114,
+              67,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              58,
+              47,
+              47,
+              102,
+              97,
+              114,
+              109,
+              108,
+              97,
+              110,
+              100,
+              98,
+              117,
+              99,
+              107,
+              101,
+              116,
+              46,
+              111,
+              115,
+              115,
+              45,
+              99,
+              110,
+              45,
+              98,
+              101,
+              105,
+              106,
+              105,
+              110,
+              103,
+              46,
+              97,
+              108,
+              105,
+              121,
+              117,
+              110,
+              99,
+              115,
+              46,
+              99,
+              111,
+              109,
+              47,
+              50,
+              54,
+              48,
+              52,
+              49,
+              53,
+              51,
+              52,
+              49,
+              53,
+              51,
+              54,
+              48,
+              55,
+              54,
+              48,
+              49,
+              46,
+              112,
+              110,
+              103,
+              34,
+              44,
+              34,
+              117,
+              110,
+              105,
+              116,
+              34,
+              58,
+              34,
+              229,
+              140,
+              151,
+              228,
+              186,
+              172,
+              229,
+              134,
+              156,
+              231,
+              148,
+              176,
+              231,
+              174,
+              161,
+              229,
+              174,
+              182,
+              231,
+              167,
+              145,
+              230,
+              138,
+              128,
+              230,
+              156,
+              137,
+              233,
+              153,
+              144,
+              232,
+              180,
+              163,
+              228,
+              187,
+              187,
+              229,
+              133,
+              172,
+              229,
+              143,
+              184,
+              34,
+              44,
+              34,
+              111,
+              114,
+              100,
+              101,
+              114,
+              95,
+              110,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              50,
+              54,
+              48,
+              52,
+              49,
+              53,
+              51,
+              52,
+              49,
+              53,
+              51,
+              54,
+              48,
+              55,
+              54,
+              48,
+              49,
+              34,
+              44,
+              34,
+              111,
+              114,
+              100,
+              101,
+              114,
+              95,
+              109,
+              111,
+              110,
+              101,
+              121,
+              34,
+              58,
+              34,
+              49,
+              48,
+              48,
+              48,
+              46,
+              48,
+              34,
+              125,
+              44,
+              34,
+              115,
+              104,
+              111,
+              119,
+              70,
+              108,
+              97,
+              103,
+              34,
+              58,
+              34,
+              49,
+              34,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 772,
+          "responseSize": 293
+        },
+        "id": "c03ac5dd-3be4-4b25-8204-17c8e61de7de"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 293
+    },
+    "failures": [],
+    "error": null
+  }
+}

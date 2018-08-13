@@ -1,0 +1,7 @@
+1.postman项目，导出v2，json,环境变量也要导出
+2.cmd命令，npm install -g newman
+ 查看版本newman -version
+  安装html
+  npm install newman-reporter-html
+3.cmd进入目录，
+newman run ywb_addorder.postman_collection.json --reporters cli,html,json,junit
