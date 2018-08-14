@@ -1,0 +1,42 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1534172489543" stop="1534172489568">
+  <name>test_div</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1534172489543" status="passed" stop="1534172489556">
+      <name>DivTest.test_div_001</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="2424-MainThread"/>
+        <label name="host" value="LRH-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1534172489559" status="passed" stop="1534172489563">
+      <name>DivTest.test_div_002</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="2424-MainThread"/>
+        <label name="host" value="LRH-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1534172489565" status="passed" stop="1534172489568">
+      <name>DivTest.test_div_003</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="2424-MainThread"/>
+        <label name="host" value="LRH-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

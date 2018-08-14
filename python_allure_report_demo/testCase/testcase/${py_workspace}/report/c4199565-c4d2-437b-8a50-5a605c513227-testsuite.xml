@@ -1,0 +1,25 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1534171465436" stop="1534171467108">
+  <description>
+后台派单给飞手 
+3.x
+</description>
+  <name>testcase.test_ywb_addorder</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1534171465436" status="passed" stop="1534171467108">
+      <description>ywb add order</description>
+      <name>Test_addorder.test_ywb_add_order</name>
+      <attachments>
+        <attachment source="a7e3b918-10e7-4a4d-9b74-d6368c053b95-attachment.txt" title="Captured stdout call" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="9376-MainThread"/>
+        <label name="host" value="LRH-PC"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
