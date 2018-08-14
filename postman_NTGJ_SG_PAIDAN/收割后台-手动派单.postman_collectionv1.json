@@ -1,0 +1,459 @@
+{
+	"id": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+	"name": "收割后台-手动派单",
+	"description": "",
+	"order": [
+		"b78f5c34-3ccc-6179-54fc-48d11815e96f",
+		"3ac9d7fb-dcda-9537-78d7-d8a56b32ba76",
+		"aff7d319-3f7b-3a9e-a0d4-9c6ec7b8200a",
+		"d4494c83-1b6c-6eee-edca-41e3545f4048",
+		"4822b6e8-ae3b-fc43-430b-853558e6bc66"
+	],
+	"folders": [],
+	"timestamp": 1534237031162,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "3ac9d7fb-dcda-9537-78d7-d8a56b32ba76",
+			"headers": "Content-Type: application/json;charset=UTF-8\nFARMFRIEND_TOKEN: {{sg_farm_token}}\n",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/queryFlyOrderList",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+			"data": [
+				{
+					"key": "isTest",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "makePeople",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "acceptOrderPeople",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "salesman_name",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order_number",
+					"value": "{{sg_order_number}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "crops_name",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isPay",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "state",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "flyUserType",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "medicineService",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "teamWork",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "hasMedicine",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sopTagid",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "startCreateTime",
+					"value": "2018-01-01",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "endCreateTime",
+					"value": "2018-08-14",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "region",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sonCompanyId",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "salesmanId",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "workAddress",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fromSalesmanManage",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "rows",
+					"value": "30",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "002-ceshi-订单管理-查询订单",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1534237884452,
+			"version": 2,
+			"responses": [],
+			"tests": "var j= JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"sg_order_id\", j.datas.data[0].id);\n\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "4822b6e8-ae3b-fc43-430b-853558e6bc66",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nFARMFRIEND_TOKEN: {{sg_farm_token}}\n",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/publishOrder",
+			"pathVariables": {},
+			"preRequestScript": "\n\n",
+			"method": "POST",
+			"collectionId": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+			"data": [
+				{
+					"key": "id",
+					"value": "{{sg_order_id}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "orderNumber",
+					"value": "{{sg_order_number}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "extractingPercentage",
+					"value": "1.3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "subsidyPercentage",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "flyUser",
+					"value": "53",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "workStartTime",
+					"value": "2018-08-16",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "days",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sendType",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isTeam",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "teamUserNum",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "planeNum",
+					"value": "0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isAll",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "005-ceshi-后台订单-手动派单",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1534237895243,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "aff7d319-3f7b-3a9e-a0d4-9c6ec7b8200a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/query_orderinfo",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+			"data": [
+				{
+					"key": "order_num",
+					"value": "{{sg_order_number}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "userOrderType",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "003-ceshi-订单管理-订单详情",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1534237888597,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b78f5c34-3ccc-6179-54fc-48d11815e96f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/sys/login",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+			"data": [
+				{
+					"key": "userName",
+					"value": "lirunhua",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "passWord",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "001—ceshi-后台login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1534237876417,
+			"version": 2,
+			"responses": [],
+			"tests": "var t = JSON.parse(responseBody);\n\npostman.setEnvironmentVariable(\"sg_farm_token\", t.data.FARMFRIEND_TOKEN);",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d4494c83-1b6c-6eee-edca-41e3545f4048",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nFARMFRIEND_TOKEN: {{sg_farm_token}}\n",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/user/queryAssignFlyUser",
+			"pathVariables": {},
+			"preRequestScript": "postman.getEnvironmentVariable(\"sg_order_id\", \"j.datas.data[0].id\");\n",
+			"method": "POST",
+			"collectionId": "c7fda70d-1c6a-9bd0-287f-b510fb046c29",
+			"data": [
+				{
+					"key": "id",
+					"value": "{{sg_order_id}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "time",
+					"value": "2018-08-16",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "rows",
+					"value": "50",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "xy",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "asc",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "teamName",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "18301212965",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isInnerUser",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "region",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "role",
+					"value": "-1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isAll",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "queryAssignFlyUser",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "004-ceshi-订单管理-查询飞手",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1534237891996,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
