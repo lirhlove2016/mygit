@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="收割后台-手动派单" tests="5" time="0.546">
+  <testsuite name="001—ceshi-后台login" id="7e503175-ed8f-4488-9a5f-070031aed768" tests="0" failures="0" errors="0" time="0.267"/>
+  <testsuite name="002-ceshi-订单管理-查询订单" id="fa11b849-962f-4760-bc42-7ef5c0ac985f" tests="0" failures="0" errors="1" time="0.216">
+    <error>
+      <![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read property 'id' of undefined
+---
+]]>
+    </error>
+  </testsuite>
+  <testsuite name="003-ceshi-订单管理-订单详情" id="e3483810-f488-4826-a40e-cd49df187a37" tests="0" failures="0" errors="0" time="0.013"/>
+  <testsuite name="004-ceshi-订单管理-查询飞手" id="097b6e01-7553-40d1-951f-e45f6802c0e9" tests="0" failures="0" errors="0" time="0.015"/>
+  <testsuite name="005-ceshi-后台订单-手动派单" id="78a77cfc-68d4-44fb-843b-73a72f5cc835" tests="0" failures="0" errors="0" time="0.035"/>
+</testsuites>

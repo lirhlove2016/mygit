@@ -1,0 +1,3070 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "2b0ee912-ce5f-07ff-60da-308114abca23"
+    },
+    "item": [
+      {
+        "id": "7e503175-ed8f-4488-9a5f-070031aed768",
+        "name": "001—ceshi-后台login",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "sys",
+              "login"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "userName",
+                "value": "lirunhua"
+              },
+              {
+                "key": "passWord",
+                "value": "123456"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "f79c8140-8048-455f-9743-b2bed780aefd",
+              "type": "text/javascript",
+              "exec": [
+                "var t = JSON.parse(responseBody);",
+                "",
+                "postman.setEnvironmentVariable(\"sg_farm_token\", t.data.FARMFRIEND_TOKEN);"
+              ],
+              "_lastExecutionId": "2bd8230b-7845-4dae-9b04-bf5c8a3f4d86"
+            }
+          }
+        ]
+      },
+      {
+        "id": "fa11b849-962f-4760-bc42-7ef5c0ac985f",
+        "name": "002-ceshi-订单管理-查询订单",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "queryFlyOrderList"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "{{sg_farm_token}}"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "isTest",
+                "value": "0"
+              },
+              {
+                "key": "type",
+                "value": "1"
+              },
+              {
+                "key": "makePeople",
+                "value": ""
+              },
+              {
+                "key": "acceptOrderPeople",
+                "value": ""
+              },
+              {
+                "key": "phone",
+                "value": ""
+              },
+              {
+                "key": "salesman_name",
+                "value": ""
+              },
+              {
+                "key": "order_number",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "crops_name",
+                "value": "-1"
+              },
+              {
+                "key": "isPay",
+                "value": "-1"
+              },
+              {
+                "key": "state",
+                "value": "-1"
+              },
+              {
+                "key": "flyUserType",
+                "value": "-1"
+              },
+              {
+                "key": "medicineService",
+                "value": "-1"
+              },
+              {
+                "key": "teamWork",
+                "value": "-1"
+              },
+              {
+                "key": "hasMedicine",
+                "value": "-1"
+              },
+              {
+                "key": "sopTagid",
+                "value": ""
+              },
+              {
+                "key": "startCreateTime",
+                "value": "2018-01-01"
+              },
+              {
+                "key": "endCreateTime",
+                "value": "2018-08-14"
+              },
+              {
+                "key": "region",
+                "value": ""
+              },
+              {
+                "key": "sonCompanyId",
+                "value": "-1"
+              },
+              {
+                "key": "salesmanId",
+                "value": "-1"
+              },
+              {
+                "key": "workAddress",
+                "value": ""
+              },
+              {
+                "key": "fromSalesmanManage",
+                "value": "0"
+              },
+              {
+                "key": "page",
+                "value": "1"
+              },
+              {
+                "key": "rows",
+                "value": "30"
+              },
+              {
+                "key": "sort",
+                "value": ""
+              },
+              {
+                "key": "order",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "f28a14c5-83d7-4df9-b136-72e16d678ca2",
+              "type": "text/javascript",
+              "exec": [
+                "var j= JSON.parse(responseBody);",
+                "postman.setEnvironmentVariable(\"sg_order_id\", j.datas.data[0].id);",
+                "",
+                "",
+                ""
+              ],
+              "_lastExecutionId": "1be83a83-dc13-4c84-a7ea-0151d736af1e"
+            }
+          }
+        ]
+      },
+      {
+        "id": "e3483810-f488-4826-a40e-cd49df187a37",
+        "name": "003-ceshi-订单管理-订单详情",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "query_orderinfo"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "order_num",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "userOrderType",
+                "value": "2"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "097b6e01-7553-40d1-951f-e45f6802c0e9",
+        "name": "004-ceshi-订单管理-查询飞手",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "user",
+              "queryAssignFlyUser"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "{{sg_farm_token}}"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "id",
+                "value": "{{sg_order_id}}"
+              },
+              {
+                "key": "time",
+                "value": "2018-08-16"
+              },
+              {
+                "key": "page",
+                "value": "1"
+              },
+              {
+                "key": "rows",
+                "value": "50"
+              },
+              {
+                "key": "sort",
+                "value": "xy"
+              },
+              {
+                "key": "order",
+                "value": "asc"
+              },
+              {
+                "key": "teamName",
+                "value": ""
+              },
+              {
+                "key": "name",
+                "value": ""
+              },
+              {
+                "key": "phone",
+                "value": "18301212965"
+              },
+              {
+                "key": "isInnerUser",
+                "value": "-1"
+              },
+              {
+                "key": "region",
+                "value": "-1"
+              },
+              {
+                "key": "role",
+                "value": "-1"
+              },
+              {
+                "key": "isAll",
+                "value": "1"
+              },
+              {
+                "key": "queryAssignFlyUser",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "e8364fcb-9d75-44cc-91d8-c7bd0580786d",
+              "type": "text/javascript",
+              "exec": [
+                "postman.getEnvironmentVariable(\"sg_order_id\", \"j.datas.data[0].id\");",
+                ""
+              ],
+              "_lastExecutionId": "37922e0e-3c30-49e1-abe4-75c3cd5580cf"
+            }
+          }
+        ]
+      },
+      {
+        "id": "78a77cfc-68d4-44fb-843b-73a72f5cc835",
+        "name": "005-ceshi-后台订单-手动派单",
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "publishOrder"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "{{sg_farm_token}}"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "id",
+                "value": "{{sg_order_id}}"
+              },
+              {
+                "key": "orderNumber",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "extractingPercentage",
+                "value": "1.3"
+              },
+              {
+                "key": "subsidyPercentage",
+                "value": "1"
+              },
+              {
+                "key": "flyUser",
+                "value": "53"
+              },
+              {
+                "key": "workStartTime",
+                "value": "2018-08-16"
+              },
+              {
+                "key": "days",
+                "value": "1"
+              },
+              {
+                "key": "sendType",
+                "value": "1"
+              },
+              {
+                "key": "isTeam",
+                "value": "0"
+              },
+              {
+                "key": "teamUserNum",
+                "value": "1"
+              },
+              {
+                "key": "planeNum",
+                "value": "0"
+              },
+              {
+                "key": "isAll",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "ccb9d3b3-d5b6-44aa-bcda-fd402a5e922e",
+              "type": "text/javascript",
+              "exec": [
+                "",
+                "",
+                ""
+              ],
+              "_lastExecutionId": "a5d1a33e-d963-47f9-bc8f-b7af717527a1"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "2b0ee912-ce5f-07ff-60da-308114abca23",
+      "name": "收割后台-手动派单",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "3fbba7f3-7bc7-443d-ac41-34c8a083b74a",
+    "values": [
+      {
+        "type": "any",
+        "value": "eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0=",
+        "key": "sg_farm_token"
+      }
+    ]
+  },
+  "globals": {
+    "id": "5c247e9c-e53f-4623-8e19-a7e7fda8e8a2",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 1
+      },
+      "prerequests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 1
+      },
+      "prerequestScripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 109.2,
+      "started": 1534351756853,
+      "completed": 1534351757649
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "b77f8684-a884-4d6d-afaa-ff5b1423ae36",
+          "httpRequestId": "e5193607-c616-4c50-897e-79ec2fd755db"
+        },
+        "item": {
+          "id": "7e503175-ed8f-4488-9a5f-070031aed768",
+          "name": "001—ceshi-后台login",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "sys",
+                "login"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userName",
+                  "value": "lirunhua"
+                },
+                {
+                  "key": "passWord",
+                  "value": "123456"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "f79c8140-8048-455f-9743-b2bed780aefd",
+                "type": "text/javascript",
+                "exec": [
+                  "var t = JSON.parse(responseBody);",
+                  "",
+                  "postman.setEnvironmentVariable(\"sg_farm_token\", t.data.FARMFRIEND_TOKEN);"
+                ],
+                "_lastExecutionId": "2bd8230b-7845-4dae-9b04-bf5c8a3f4d86"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "sys",
+              "login"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 33
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "userName",
+                "value": "lirunhua"
+              },
+              {
+                "key": "passWord",
+                "value": "123456"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "1f212fc8-c6c8-4c08-8687-c854bfa54089",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Aug 2018 16:49:14 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "FARMFRIEND_TOKEN=eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0=;domain=farmfriend.com.cn;path=/"
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "FARMFRIEND_LT=1534351754600"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              110,
+              111,
+              34,
+              58,
+              48,
+              44,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              123,
+              34,
+              70,
+              65,
+              82,
+              77,
+              70,
+              82,
+              73,
+              69,
+              78,
+              68,
+              95,
+              84,
+              79,
+              75,
+              69,
+              78,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              49,
+              97,
+              87,
+              81,
+              105,
+              79,
+              105,
+              73,
+              51,
+              78,
+              83,
+              73,
+              115,
+              73,
+              110,
+              82,
+              118,
+              97,
+              50,
+              86,
+              117,
+              73,
+              106,
+              111,
+              105,
+              77,
+              106,
+              103,
+              120,
+              90,
+              106,
+              85,
+              121,
+              79,
+              68,
+              99,
+              116,
+              90,
+              68,
+              73,
+              53,
+              89,
+              121,
+              48,
+              48,
+              90,
+              84,
+              69,
+              52,
+              76,
+              87,
+              74,
+              104,
+              77,
+              68,
+              103,
+              116,
+              79,
+              68,
+              85,
+              121,
+              90,
+              68,
+              77,
+              119,
+              89,
+              106,
+              103,
+              48,
+              78,
+              50,
+              69,
+              50,
+              73,
+              110,
+              48,
+              61,
+              34,
+              44,
+              34,
+              70,
+              65,
+              82,
+              77,
+              70,
+              82,
+              73,
+              69,
+              78,
+              68,
+              95,
+              76,
+              84,
+              34,
+              58,
+              34,
+              49,
+              53,
+              51,
+              52,
+              51,
+              53,
+              49,
+              55,
+              53,
+              52,
+              54,
+              48,
+              48,
+              34,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 267,
+          "responseSize": 154
+        },
+        "id": "7e503175-ed8f-4488-9a5f-070031aed768"
+      },
+      {
+        "cursor": {
+          "ref": "f65696db-9ec4-4cc4-918d-9b23abce7160",
+          "length": 5,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "ee42e483-7925-40f7-baec-92b01896efaf"
+        },
+        "item": {
+          "id": "fa11b849-962f-4760-bc42-7ef5c0ac985f",
+          "name": "002-ceshi-订单管理-查询订单",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "order",
+                "queryFlyOrderList"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "FARMFRIEND_TOKEN",
+                "value": "{{sg_farm_token}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "isTest",
+                  "value": "0"
+                },
+                {
+                  "key": "type",
+                  "value": "1"
+                },
+                {
+                  "key": "makePeople",
+                  "value": ""
+                },
+                {
+                  "key": "acceptOrderPeople",
+                  "value": ""
+                },
+                {
+                  "key": "phone",
+                  "value": ""
+                },
+                {
+                  "key": "salesman_name",
+                  "value": ""
+                },
+                {
+                  "key": "order_number",
+                  "value": "{{sg_order_number}}"
+                },
+                {
+                  "key": "crops_name",
+                  "value": "-1"
+                },
+                {
+                  "key": "isPay",
+                  "value": "-1"
+                },
+                {
+                  "key": "state",
+                  "value": "-1"
+                },
+                {
+                  "key": "flyUserType",
+                  "value": "-1"
+                },
+                {
+                  "key": "medicineService",
+                  "value": "-1"
+                },
+                {
+                  "key": "teamWork",
+                  "value": "-1"
+                },
+                {
+                  "key": "hasMedicine",
+                  "value": "-1"
+                },
+                {
+                  "key": "sopTagid",
+                  "value": ""
+                },
+                {
+                  "key": "startCreateTime",
+                  "value": "2018-01-01"
+                },
+                {
+                  "key": "endCreateTime",
+                  "value": "2018-08-14"
+                },
+                {
+                  "key": "region",
+                  "value": ""
+                },
+                {
+                  "key": "sonCompanyId",
+                  "value": "-1"
+                },
+                {
+                  "key": "salesmanId",
+                  "value": "-1"
+                },
+                {
+                  "key": "workAddress",
+                  "value": ""
+                },
+                {
+                  "key": "fromSalesmanManage",
+                  "value": "0"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "rows",
+                  "value": "30"
+                },
+                {
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "key": "order",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "f28a14c5-83d7-4df9-b136-72e16d678ca2",
+                "type": "text/javascript",
+                "exec": [
+                  "var j= JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sg_order_id\", j.datas.data[0].id);",
+                  "",
+                  "",
+                  ""
+                ],
+                "_lastExecutionId": "1be83a83-dc13-4c84-a7ea-0151d736af1e"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "queryFlyOrderList"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "cookie",
+              "value": "FARMFRIEND_TOKEN=eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 364
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "isTest",
+                "value": "0"
+              },
+              {
+                "key": "type",
+                "value": "1"
+              },
+              {
+                "key": "makePeople",
+                "value": ""
+              },
+              {
+                "key": "acceptOrderPeople",
+                "value": ""
+              },
+              {
+                "key": "phone",
+                "value": ""
+              },
+              {
+                "key": "salesman_name",
+                "value": ""
+              },
+              {
+                "key": "order_number",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "crops_name",
+                "value": "-1"
+              },
+              {
+                "key": "isPay",
+                "value": "-1"
+              },
+              {
+                "key": "state",
+                "value": "-1"
+              },
+              {
+                "key": "flyUserType",
+                "value": "-1"
+              },
+              {
+                "key": "medicineService",
+                "value": "-1"
+              },
+              {
+                "key": "teamWork",
+                "value": "-1"
+              },
+              {
+                "key": "hasMedicine",
+                "value": "-1"
+              },
+              {
+                "key": "sopTagid",
+                "value": ""
+              },
+              {
+                "key": "startCreateTime",
+                "value": "2018-01-01"
+              },
+              {
+                "key": "endCreateTime",
+                "value": "2018-08-14"
+              },
+              {
+                "key": "region",
+                "value": ""
+              },
+              {
+                "key": "sonCompanyId",
+                "value": "-1"
+              },
+              {
+                "key": "salesmanId",
+                "value": "-1"
+              },
+              {
+                "key": "workAddress",
+                "value": ""
+              },
+              {
+                "key": "fromSalesmanManage",
+                "value": "0"
+              },
+              {
+                "key": "page",
+                "value": "1"
+              },
+              {
+                "key": "rows",
+                "value": "30"
+              },
+              {
+                "key": "sort",
+                "value": ""
+              },
+              {
+                "key": "order",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "7712d849-81e2-4362-936b-e9d85784861c",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Aug 2018 16:49:14 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              114,
+              101,
+              115,
+              67,
+              111,
+              100,
+              101,
+              34,
+              58,
+              48,
+              44,
+              34,
+              105,
+              110,
+              102,
+              111,
+              34,
+              58,
+              34,
+              83,
+              85,
+              67,
+              67,
+              69,
+              83,
+              83,
+              34,
+              44,
+              34,
+              100,
+              97,
+              116,
+              97,
+              115,
+              34,
+              58,
+              123,
+              34,
+              116,
+              111,
+              116,
+              97,
+              108,
+              34,
+              58,
+              48,
+              44,
+              34,
+              100,
+              97,
+              116,
+              97,
+              34,
+              58,
+              91,
+              93,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 216,
+          "responseSize": 60
+        },
+        "id": "fa11b849-962f-4760-bc42-7ef5c0ac985f",
+        "testScript": [
+          {
+            "error": {
+              "type": "Error",
+              "name": "TypeError",
+              "message": "Cannot read property 'id' of undefined",
+              "checksum": "e180c8f51fd0eb2e460a56ee87c7dd20",
+              "id": "664b54f6-782a-4851-8919-c06dc3930619",
+              "timestamp": 1534351757495,
+              "stacktrace": []
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "6ba0768c-a1f2-43e1-a44c-a592f17adae6",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "b1bef091-81d2-46a4-b8dd-32cc07ef8c37"
+        },
+        "item": {
+          "id": "e3483810-f488-4826-a40e-cd49df187a37",
+          "name": "003-ceshi-订单管理-订单详情",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "order",
+                "query_orderinfo"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "order_num",
+                  "value": "{{sg_order_number}}"
+                },
+                {
+                  "key": "userOrderType",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "query_orderinfo"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "cookie",
+              "value": "FARMFRIEND_TOKEN=eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 53
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "order_num",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "userOrderType",
+                "value": "2"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "ae5b4ddf-748f-4218-bd29-28594c97dd5c",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Aug 2018 16:49:15 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              110,
+              111,
+              34,
+              58,
+              49,
+              51,
+              44,
+              34,
+              101,
+              114,
+              114,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              105,
+              110,
+              116,
+              101,
+              114,
+              32,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 13,
+          "responseSize": 35
+        },
+        "id": "e3483810-f488-4826-a40e-cd49df187a37"
+      },
+      {
+        "cursor": {
+          "ref": "5c8a9860-cb99-42fa-ae52-66f6bb07bcdb",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "c07c193c-dc48-41b8-a2a2-7200d9c82a9a"
+        },
+        "item": {
+          "id": "097b6e01-7553-40d1-951f-e45f6802c0e9",
+          "name": "004-ceshi-订单管理-查询飞手",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "user",
+                "queryAssignFlyUser"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "FARMFRIEND_TOKEN",
+                "value": "{{sg_farm_token}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "id",
+                  "value": "{{sg_order_id}}"
+                },
+                {
+                  "key": "time",
+                  "value": "2018-08-16"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "rows",
+                  "value": "50"
+                },
+                {
+                  "key": "sort",
+                  "value": "xy"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "key": "teamName",
+                  "value": ""
+                },
+                {
+                  "key": "name",
+                  "value": ""
+                },
+                {
+                  "key": "phone",
+                  "value": "18301212965"
+                },
+                {
+                  "key": "isInnerUser",
+                  "value": "-1"
+                },
+                {
+                  "key": "region",
+                  "value": "-1"
+                },
+                {
+                  "key": "role",
+                  "value": "-1"
+                },
+                {
+                  "key": "isAll",
+                  "value": "1"
+                },
+                {
+                  "key": "queryAssignFlyUser",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "e8364fcb-9d75-44cc-91d8-c7bd0580786d",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.getEnvironmentVariable(\"sg_order_id\", \"j.datas.data[0].id\");",
+                  ""
+                ],
+                "_lastExecutionId": "37922e0e-3c30-49e1-abe4-75c3cd5580cf"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "user",
+              "queryAssignFlyUser"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "cookie",
+              "value": "FARMFRIEND_TOKEN=eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 170
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "id",
+                "value": "{{sg_order_id}}"
+              },
+              {
+                "key": "time",
+                "value": "2018-08-16"
+              },
+              {
+                "key": "page",
+                "value": "1"
+              },
+              {
+                "key": "rows",
+                "value": "50"
+              },
+              {
+                "key": "sort",
+                "value": "xy"
+              },
+              {
+                "key": "order",
+                "value": "asc"
+              },
+              {
+                "key": "teamName",
+                "value": ""
+              },
+              {
+                "key": "name",
+                "value": ""
+              },
+              {
+                "key": "phone",
+                "value": "18301212965"
+              },
+              {
+                "key": "isInnerUser",
+                "value": "-1"
+              },
+              {
+                "key": "region",
+                "value": "-1"
+              },
+              {
+                "key": "role",
+                "value": "-1"
+              },
+              {
+                "key": "isAll",
+                "value": "1"
+              },
+              {
+                "key": "queryAssignFlyUser",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "a1d66166-d511-44a0-862f-acb432fcbda2",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Aug 2018 16:49:15 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              110,
+              111,
+              34,
+              58,
+              49,
+              51,
+              44,
+              34,
+              101,
+              114,
+              114,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              105,
+              110,
+              116,
+              101,
+              114,
+              32,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 15,
+          "responseSize": 35
+        },
+        "id": "097b6e01-7553-40d1-951f-e45f6802c0e9"
+      },
+      {
+        "cursor": {
+          "ref": "8939b882-e177-436a-8f05-4e8c7d7b3cc2",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "73bf19f9-0bb1-4b47-a836-731af5913e42"
+        },
+        "item": {
+          "id": "78a77cfc-68d4-44fb-843b-73a72f5cc835",
+          "name": "005-ceshi-后台订单-手动派单",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "order",
+                "publishOrder"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "FARMFRIEND_TOKEN",
+                "value": "{{sg_farm_token}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "id",
+                  "value": "{{sg_order_id}}"
+                },
+                {
+                  "key": "orderNumber",
+                  "value": "{{sg_order_number}}"
+                },
+                {
+                  "key": "extractingPercentage",
+                  "value": "1.3"
+                },
+                {
+                  "key": "subsidyPercentage",
+                  "value": "1"
+                },
+                {
+                  "key": "flyUser",
+                  "value": "53"
+                },
+                {
+                  "key": "workStartTime",
+                  "value": "2018-08-16"
+                },
+                {
+                  "key": "days",
+                  "value": "1"
+                },
+                {
+                  "key": "sendType",
+                  "value": "1"
+                },
+                {
+                  "key": "isTeam",
+                  "value": "0"
+                },
+                {
+                  "key": "teamUserNum",
+                  "value": "1"
+                },
+                {
+                  "key": "planeNum",
+                  "value": "0"
+                },
+                {
+                  "key": "isAll",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "ccb9d3b3-d5b6-44aa-bcda-fd402a5e922e",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "",
+                  ""
+                ],
+                "_lastExecutionId": "a5d1a33e-d963-47f9-bc8f-b7af717527a1"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "path": [
+              "reapermanager",
+              "order",
+              "publishOrder"
+            ],
+            "host": [
+              "ceshi",
+              "farmfriend",
+              "com",
+              "cn"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "description": {
+                "content": "",
+                "type": "text/plain"
+              },
+              "key": "FARMFRIEND_TOKEN",
+              "value": "eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.2.0"
+            },
+            {
+              "key": "Accept",
+              "value": "*/*"
+            },
+            {
+              "key": "Host",
+              "value": "ceshi.farmfriend.com.cn"
+            },
+            {
+              "key": "cookie",
+              "value": "FARMFRIEND_TOKEN=eyJ1aWQiOiI3NSIsInRva2VuIjoiMjgxZjUyODctZDI5Yy00ZTE4LWJhMDgtODUyZDMwYjg0N2E2In0="
+            },
+            {
+              "key": "accept-encoding",
+              "value": "gzip, deflate"
+            },
+            {
+              "key": "content-length",
+              "value": 207
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "id",
+                "value": "{{sg_order_id}}"
+              },
+              {
+                "key": "orderNumber",
+                "value": "{{sg_order_number}}"
+              },
+              {
+                "key": "extractingPercentage",
+                "value": "1.3"
+              },
+              {
+                "key": "subsidyPercentage",
+                "value": "1"
+              },
+              {
+                "key": "flyUser",
+                "value": "53"
+              },
+              {
+                "key": "workStartTime",
+                "value": "2018-08-16"
+              },
+              {
+                "key": "days",
+                "value": "1"
+              },
+              {
+                "key": "sendType",
+                "value": "1"
+              },
+              {
+                "key": "isTeam",
+                "value": "0"
+              },
+              {
+                "key": "teamUserNum",
+                "value": "1"
+              },
+              {
+                "key": "planeNum",
+                "value": "0"
+              },
+              {
+                "key": "isAll",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "48b8c7c2-f2ac-4a46-b5e1-49ff7af232bf",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Server",
+              "value": "openresty/1.11.2.5"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Aug 2018 16:49:15 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "farmfriend_token,Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,X-Requested-With"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,POST,OPTIONS"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-store"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              110,
+              111,
+              34,
+              58,
+              49,
+              51,
+              44,
+              34,
+              101,
+              114,
+              114,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              105,
+              110,
+              116,
+              101,
+              114,
+              32,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 35,
+          "responseSize": 35
+        },
+        "id": "78a77cfc-68d4-44fb-843b-73a72f5cc835"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 319
+    },
+    "failures": [
+      {
+        "error": {
+          "type": "Error",
+          "name": "TypeError",
+          "message": "Cannot read property 'id' of undefined",
+          "checksum": "e180c8f51fd0eb2e460a56ee87c7dd20",
+          "id": "664b54f6-782a-4851-8919-c06dc3930619",
+          "timestamp": 1534351757495,
+          "stacktrace": []
+        },
+        "at": "test-script",
+        "source": {
+          "id": "fa11b849-962f-4760-bc42-7ef5c0ac985f",
+          "name": "002-ceshi-订单管理-查询订单",
+          "request": {
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "http",
+              "path": [
+                "reapermanager",
+                "order",
+                "queryFlyOrderList"
+              ],
+              "host": [
+                "ceshi",
+                "farmfriend",
+                "com",
+                "cn"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "key": "FARMFRIEND_TOKEN",
+                "value": "{{sg_farm_token}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "isTest",
+                  "value": "0"
+                },
+                {
+                  "key": "type",
+                  "value": "1"
+                },
+                {
+                  "key": "makePeople",
+                  "value": ""
+                },
+                {
+                  "key": "acceptOrderPeople",
+                  "value": ""
+                },
+                {
+                  "key": "phone",
+                  "value": ""
+                },
+                {
+                  "key": "salesman_name",
+                  "value": ""
+                },
+                {
+                  "key": "order_number",
+                  "value": "{{sg_order_number}}"
+                },
+                {
+                  "key": "crops_name",
+                  "value": "-1"
+                },
+                {
+                  "key": "isPay",
+                  "value": "-1"
+                },
+                {
+                  "key": "state",
+                  "value": "-1"
+                },
+                {
+                  "key": "flyUserType",
+                  "value": "-1"
+                },
+                {
+                  "key": "medicineService",
+                  "value": "-1"
+                },
+                {
+                  "key": "teamWork",
+                  "value": "-1"
+                },
+                {
+                  "key": "hasMedicine",
+                  "value": "-1"
+                },
+                {
+                  "key": "sopTagid",
+                  "value": ""
+                },
+                {
+                  "key": "startCreateTime",
+                  "value": "2018-01-01"
+                },
+                {
+                  "key": "endCreateTime",
+                  "value": "2018-08-14"
+                },
+                {
+                  "key": "region",
+                  "value": ""
+                },
+                {
+                  "key": "sonCompanyId",
+                  "value": "-1"
+                },
+                {
+                  "key": "salesmanId",
+                  "value": "-1"
+                },
+                {
+                  "key": "workAddress",
+                  "value": ""
+                },
+                {
+                  "key": "fromSalesmanManage",
+                  "value": "0"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "rows",
+                  "value": "30"
+                },
+                {
+                  "key": "sort",
+                  "value": ""
+                },
+                {
+                  "key": "order",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "f28a14c5-83d7-4df9-b136-72e16d678ca2",
+                "type": "text/javascript",
+                "exec": [
+                  "var j= JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sg_order_id\", j.datas.data[0].id);",
+                  "",
+                  "",
+                  ""
+                ],
+                "_lastExecutionId": "1be83a83-dc13-4c84-a7ea-0151d736af1e"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "2b0ee912-ce5f-07ff-60da-308114abca23"
+          },
+          "item": [
+            {
+              "id": "7e503175-ed8f-4488-9a5f-070031aed768",
+              "name": "001—ceshi-后台login",
+              "request": {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "reapermanager",
+                    "sys",
+                    "login"
+                  ],
+                  "host": [
+                    "ceshi",
+                    "farmfriend",
+                    "com",
+                    "cn"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "userName",
+                      "value": "lirunhua"
+                    },
+                    {
+                      "key": "passWord",
+                      "value": "123456"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f79c8140-8048-455f-9743-b2bed780aefd",
+                    "type": "text/javascript",
+                    "exec": [
+                      "var t = JSON.parse(responseBody);",
+                      "",
+                      "postman.setEnvironmentVariable(\"sg_farm_token\", t.data.FARMFRIEND_TOKEN);"
+                    ],
+                    "_lastExecutionId": "2bd8230b-7845-4dae-9b04-bf5c8a3f4d86"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "fa11b849-962f-4760-bc42-7ef5c0ac985f",
+              "name": "002-ceshi-订单管理-查询订单",
+              "request": {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "reapermanager",
+                    "order",
+                    "queryFlyOrderList"
+                  ],
+                  "host": [
+                    "ceshi",
+                    "farmfriend",
+                    "com",
+                    "cn"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                  },
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "FARMFRIEND_TOKEN",
+                    "value": "{{sg_farm_token}}"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "isTest",
+                      "value": "0"
+                    },
+                    {
+                      "key": "type",
+                      "value": "1"
+                    },
+                    {
+                      "key": "makePeople",
+                      "value": ""
+                    },
+                    {
+                      "key": "acceptOrderPeople",
+                      "value": ""
+                    },
+                    {
+                      "key": "phone",
+                      "value": ""
+                    },
+                    {
+                      "key": "salesman_name",
+                      "value": ""
+                    },
+                    {
+                      "key": "order_number",
+                      "value": "{{sg_order_number}}"
+                    },
+                    {
+                      "key": "crops_name",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "isPay",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "state",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "flyUserType",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "medicineService",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "teamWork",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "hasMedicine",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "sopTagid",
+                      "value": ""
+                    },
+                    {
+                      "key": "startCreateTime",
+                      "value": "2018-01-01"
+                    },
+                    {
+                      "key": "endCreateTime",
+                      "value": "2018-08-14"
+                    },
+                    {
+                      "key": "region",
+                      "value": ""
+                    },
+                    {
+                      "key": "sonCompanyId",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "salesmanId",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "workAddress",
+                      "value": ""
+                    },
+                    {
+                      "key": "fromSalesmanManage",
+                      "value": "0"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "30"
+                    },
+                    {
+                      "key": "sort",
+                      "value": ""
+                    },
+                    {
+                      "key": "order",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f28a14c5-83d7-4df9-b136-72e16d678ca2",
+                    "type": "text/javascript",
+                    "exec": [
+                      "var j= JSON.parse(responseBody);",
+                      "postman.setEnvironmentVariable(\"sg_order_id\", j.datas.data[0].id);",
+                      "",
+                      "",
+                      ""
+                    ],
+                    "_lastExecutionId": "1be83a83-dc13-4c84-a7ea-0151d736af1e"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "e3483810-f488-4826-a40e-cd49df187a37",
+              "name": "003-ceshi-订单管理-订单详情",
+              "request": {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "reapermanager",
+                    "order",
+                    "query_orderinfo"
+                  ],
+                  "host": [
+                    "ceshi",
+                    "farmfriend",
+                    "com",
+                    "cn"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "order_num",
+                      "value": "{{sg_order_number}}"
+                    },
+                    {
+                      "key": "userOrderType",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": []
+            },
+            {
+              "id": "097b6e01-7553-40d1-951f-e45f6802c0e9",
+              "name": "004-ceshi-订单管理-查询飞手",
+              "request": {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "reapermanager",
+                    "user",
+                    "queryAssignFlyUser"
+                  ],
+                  "host": [
+                    "ceshi",
+                    "farmfriend",
+                    "com",
+                    "cn"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "FARMFRIEND_TOKEN",
+                    "value": "{{sg_farm_token}}"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "{{sg_order_id}}"
+                    },
+                    {
+                      "key": "time",
+                      "value": "2018-08-16"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "50"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "xy"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "teamName",
+                      "value": ""
+                    },
+                    {
+                      "key": "name",
+                      "value": ""
+                    },
+                    {
+                      "key": "phone",
+                      "value": "18301212965"
+                    },
+                    {
+                      "key": "isInnerUser",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "region",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "role",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "isAll",
+                      "value": "1"
+                    },
+                    {
+                      "key": "queryAssignFlyUser",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "e8364fcb-9d75-44cc-91d8-c7bd0580786d",
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.getEnvironmentVariable(\"sg_order_id\", \"j.datas.data[0].id\");",
+                      ""
+                    ],
+                    "_lastExecutionId": "37922e0e-3c30-49e1-abe4-75c3cd5580cf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "78a77cfc-68d4-44fb-843b-73a72f5cc835",
+              "name": "005-ceshi-后台订单-手动派单",
+              "request": {
+                "description": {
+                  "content": "",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "reapermanager",
+                    "order",
+                    "publishOrder"
+                  ],
+                  "host": [
+                    "ceshi",
+                    "farmfriend",
+                    "com",
+                    "cn"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "description": {
+                      "content": "",
+                      "type": "text/plain"
+                    },
+                    "key": "FARMFRIEND_TOKEN",
+                    "value": "{{sg_farm_token}}"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "{{sg_order_id}}"
+                    },
+                    {
+                      "key": "orderNumber",
+                      "value": "{{sg_order_number}}"
+                    },
+                    {
+                      "key": "extractingPercentage",
+                      "value": "1.3"
+                    },
+                    {
+                      "key": "subsidyPercentage",
+                      "value": "1"
+                    },
+                    {
+                      "key": "flyUser",
+                      "value": "53"
+                    },
+                    {
+                      "key": "workStartTime",
+                      "value": "2018-08-16"
+                    },
+                    {
+                      "key": "days",
+                      "value": "1"
+                    },
+                    {
+                      "key": "sendType",
+                      "value": "1"
+                    },
+                    {
+                      "key": "isTeam",
+                      "value": "0"
+                    },
+                    {
+                      "key": "teamUserNum",
+                      "value": "1"
+                    },
+                    {
+                      "key": "planeNum",
+                      "value": "0"
+                    },
+                    {
+                      "key": "isAll",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "ccb9d3b3-d5b6-44aa-bcda-fd402a5e922e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "",
+                      "",
+                      ""
+                    ],
+                    "_lastExecutionId": "a5d1a33e-d963-47f9-bc8f-b7af717527a1"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "2b0ee912-ce5f-07ff-60da-308114abca23",
+            "name": "收割后台-手动派单",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            }
+          }
+        },
+        "cursor": {
+          "ref": "f65696db-9ec4-4cc4-918d-9b23abce7160",
+          "length": 5,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "ee42e483-7925-40f7-baec-92b01896efaf",
+          "scriptId": "f28a14c5-83d7-4df9-b136-72e16d678ca2"
+        }
+      }
+    ],
+    "error": null
+  }
+}
