@@ -1,0 +1,29 @@
+[
+{
+	"request":
+	{
+		"method":"post",
+		"uri":"/login",
+		"json":
+		{
+		"username":"admin",
+		"password":"admin",
+		"roleID":"22"
+		}
+	},
+	"response":
+	{
+	"json":
+	{
+		"username":"lirh",
+		"userID":"22",
+		"token":"aadadfadsd23dafdfafdfaad"
+	},
+	"headers":
+		{
+         "Content-Type":"text/html;charset=gbk"
+		}
+		
+	}
+}
+]
