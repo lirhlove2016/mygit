@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "temp",
+		"_postman_id": "f41754e9-bed9-2211-f9e7-23a6d757ab29",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://api.zhongchou.cn/deal/list?v=1&keyword={{keyword}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var keywork=data.keyword;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://api.zhongchou.cn/deal/list?v=1&keyword={{keyword}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
