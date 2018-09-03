@@ -1,0 +1,291 @@
+{
+	"id": "b517023f-bdce-408b-879f-dc62ca5103aa",
+	"name": "收割后台-手动派单-文件中取数据",
+	"allTests": [],
+	"timestamp": "2018-08-29T15:31:50.723Z",
+	"collection_id": "2b0ee912-ce5f-07ff-60da-308114abca23",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "no-environment",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "2b0ee912-ce5f-07ff-60da-308114abca23",
+		"name": "收割后台-手动派单-文件中取数据",
+		"description": "",
+		"order": [
+			"07be0318-80db-2ccf-3d76-5469cb5d29a4",
+			"2d24d4df-01d9-1e12-d82a-d31eb78b03c4",
+			"f7fe1a1b-64fc-e9ff-551f-757b7b5beb52",
+			"7840da8f-465d-adc0-a2f1-ab7e2d43547c",
+			"2c523a6b-262a-c705-5479-3b95e29a60db"
+		],
+		"folders": [],
+		"timestamp": 1534237031162,
+		"synced": true,
+		"remote_id": 0,
+		"owner": "2590518",
+		"sharedWithTeam": false,
+		"subscribed": false,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"createdAt": 1534345905165,
+		"updatedAt": 1534350305274,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {}
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"enabled": true,
+			"key": "echo_digest_realm",
+			"type": "text",
+			"value": "Users"
+		},
+		{
+			"enabled": true,
+			"key": "echo_digest_nonce",
+			"type": "text",
+			"value": "FyIPpblLY0OTHZwWeGczpMWHjdPnxFaa"
+		}
+	],
+	"results": [
+		{
+			"name": "001—ceshi-后台login-token",
+			"id": "07be0318-80db-2ccf-3d76-5469cb5d29a4",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/sys/login",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Your test name": true,
+				"检查返回是否含有farmfriendtoken": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"检查返回是否含有farmfriendtoken": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"498"
+			],
+			"allTests": [
+				{
+					"Your test name": true,
+					"检查返回是否含有farmfriendtoken": true
+				}
+			],
+			"time": "498",
+			"totalRequestTime": "498",
+			"iterationResults": {}
+		},
+		{
+			"name": "002-ceshi-订单管理-查询订单-获取orderid",
+			"id": "2d24d4df-01d9-1e12-d82a-d31eb78b03c4",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/queryFlyOrderList",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"788"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "788",
+			"totalRequestTime": "788",
+			"iterationResults": {}
+		},
+		{
+			"name": "003-ceshi-订单管理-订单详情",
+			"id": "f7fe1a1b-64fc-e9ff-551f-757b7b5beb52",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/query_orderinfo",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"21"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "21",
+			"totalRequestTime": "21",
+			"iterationResults": {}
+		},
+		{
+			"name": "004-ceshi-订单管理-查询飞手",
+			"id": "7840da8f-465d-adc0-a2f1-ab7e2d43547c",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/user/queryAssignFlyUser",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"60"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "60",
+			"totalRequestTime": "60",
+			"iterationResults": {}
+		},
+		{
+			"name": "005-ceshi-后台订单-手动派单",
+			"id": "2c523a6b-262a-c705-5479-3b95e29a60db",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/publishOrder",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"35"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "35",
+			"totalRequestTime": "35",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 2,
+	"totalFail": 0,
+	"totalTime": 1402,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "001—ceshi-后台login-token",
+			"id": "07be0318-80db-2ccf-3d76-5469cb5d29a4",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/sys/login",
+			"time": "2018-08-29T15:31:50.723Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"检查返回是否含有farmfriendtoken": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "002-ceshi-订单管理-查询订单-获取orderid",
+			"id": "2d24d4df-01d9-1e12-d82a-d31eb78b03c4",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/queryFlyOrderList",
+			"time": "2018-08-29T15:31:50.723Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "003-ceshi-订单管理-订单详情",
+			"id": "f7fe1a1b-64fc-e9ff-551f-757b7b5beb52",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/query_orderinfo",
+			"time": "2018-08-29T15:31:50.723Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "004-ceshi-订单管理-查询飞手",
+			"id": "7840da8f-465d-adc0-a2f1-ab7e2d43547c",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/user/queryAssignFlyUser",
+			"time": "2018-08-29T15:31:50.723Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "005-ceshi-后台订单-手动派单",
+			"id": "2c523a6b-262a-c705-5479-3b95e29a60db",
+			"url": "http://ceshi.farmfriend.com.cn/reapermanager/order/publishOrder",
+			"time": "2018-08-29T15:31:50.723Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}

@@ -1,0 +1,88 @@
+{
+	"variables": [],
+	"info": {
+		"name": "temp",
+		"_postman_id": "f41754e9-bed9-2211-f9e7-23a6d757ab29",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "001—ceshi-后台login-token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"//把token设置成环境变量，下个接口需要",
+							"//postman.setEnvironmentVariable(\"sg_farm_token\", jsonData.data.FARMFRIEND_TOKEN);",
+							"",
+							"if (jsonData.errno === 0){",
+							"    tests[\" body has farmfriendtoken\"] = responseBody.has(\"FARMFRIEND_TOKEN\");",
+							"",
+							"}",
+							"if (jsonData.errno !==0){",
+							"    ",
+							"    tests[\"body has errmsg\"] = responseBody.has(\"errmsg\");",
+							"",
+							"}",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"//方法1",
+							"//postman.setEnvironmentVariable(\"userName\",data.userName);",
+							"//postman.setEnvironmentVariable(\"passWord\",data.passWord);",
+							"",
+							"//方法2",
+							"var serName=data.userName;",
+							"var passWord=data.passWord;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://ceshi.farmfriend.com.cn/reapermanager/sys/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "passWord",
+							"value": "{{passWord}}",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "userName",
+							"value": "{{userName}}",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
