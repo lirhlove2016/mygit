@@ -31,21 +31,20 @@ class ExcelUtil():
                 r.append(s)
                 j += 1
                 
-            return r,self.keys
+            return r,keys
         
 if __name__ == "__main__":
-
-    filepath = r"E:\mysoft\myworksapce\project\API_py_scripts\case\myapidata.xlsx"
-    sheetName = "Sheet1"
-    data= ExcelUtil(filepath,sheetName)
-    datas,keys=data.dict_data()
-    print(keys)
     '''
+    filepath = r"E:\mysoft\myworksapce\project\API_PY_scripts\myapidata.xlsx"
+    sheetName = "Sheet1"
+    data = ExcelUtil(filepath,sheetName)
     print(data.dict_data())
     print(type(data.dict_data()))
 
     d=data.dict_data()
     print(d[0]['url'])
     print(len(d))
+    
     '''
+
     

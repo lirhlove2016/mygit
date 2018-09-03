@@ -9,14 +9,18 @@ from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
 
 
-#readfile = r"E:\mysoft\myworksapce\project\API_PY_scripts\myapidata.xlsx"
+testxlsx = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
+
+curpath = os.path.dirname(os.path.realpath(__file__))
+#testxlsx = os.path.join(curpath, "myapidata.xlsx")
+print(testxlsx)
 
 class testAPI(unittest.TestCase):
 
     def test_bdh_api(self):               
         #获取数据
-        filepath = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
-        data = ExcelUtil(filepath).dict_data()
+        data,key_names= ExcelUtil(testxlsx).dict_data()
+        print(key_names)
         reals=[]
         count=len(data)
         print('count',count)
@@ -53,6 +57,8 @@ class testAPI(unittest.TestCase):
 
             #报错所有数据
             reals.append(datalist)
+            #print(datalist)
+        return suc_num,reals,key_names
     
 if __name__=="__main__":
     unittest.main()
