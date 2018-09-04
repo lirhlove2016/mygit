@@ -249,9 +249,9 @@ function close_shots(obj) {
 </div>
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-09-03 18:13:13</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:00.033052</p>
-<p class='attribute'><strong>状态:</strong> 错误 1</p>
+<p class='attribute'><strong>开始时间:</strong> 2018-09-04 18:48:06</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:00.932685</p>
+<p class='attribute'><strong>状态:</strong> 通过 1</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -284,39 +284,53 @@ function close_shots(obj) {
     <td>错误截图</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>test_bdh_api.testAPI</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     <td> </td>
 </tr>
 
-<tr id='ft1.1'>
-    <td class='errorCase'><div class='testcase'>test_bdh_api</div></td>
+<tr id='pt1.1'>
+    <td class='none'><div class='testcase'>test_bdh_api</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        错误</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "E:\mysoft\myworksapce\project\API_PY_scripts\case\test_bdh_api.py", line 18, in test_bdh_api
-    data = ExcelUtil(filepath).dict_data()
-  File "E:\mysoft\myworksapce\project\API_PY_scripts\common\readexcel.py", line 6, in __init__
-    self.data = xlrd.open_workbook(excelPath)
-  File "C:\Python34\lib\site-packages\xlrd\__init__.py", line 116, in open_workbook
-    with open(filename, "rb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'E:\\mysoft\\myworksapce\\project\\API_PY_scripts\\myapidata.xlsx'
+pt1.1: ['Id', 'casename', 'url', 'path', 'method', 'params', 'headers', 'expectedresult', 'realresult', 'result', 'tokenname', 'token']
+count 4
+----正在进行接口测试，开始第1个请求---------------
+get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/farmlands/count  {'content-type': 'application/x-www-form-urlencoded'}
+status_code 200
+response {'errmsg': 'token not found', 'errno': 21}
+1、根据id获取地块:测试失败
+----正在进行接口测试，开始第2个请求---------------
+post http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUser/loginOrReg checkCode=9331&amp;mobilePhone=18301212965 {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
+status_code 200
+response {'errmsg': '验证码错误或已过期', 'errno': 13, 'data': None}
+2、bdh用户登录:测试失败
+----正在进行接口测试，开始第3个请求---------------
+get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUserWallet  {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
+status_code 200
+response {'errmsg': 'token not found', 'errno': 21}
+3、bdh获取钱包余额:测试失败
+----正在进行接口测试，开始第4个请求---------------
+get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUser/checkCode ip=192.168.1.15&amp;mobilePhone=18301212965 {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
+status_code 200
+response {'errmsg': '24小时内同一手机号发送次数超过限制', 'errno': 13, 'data': None}
+4、bdh获取验证码:测试失败
 
 
         </pre>
@@ -330,15 +344,15 @@ FileNotFoundError: [Errno 2] No such file or directory: 'E:\\mysoft\\myworksapce
 <tr id='total_row'>
     <td>统计</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td> </td>
     <td> </td>
 </tr>
 </table>
 <script>
-    drawCircle(0, 0, 1)
+    drawCircle(1, 0, 0)
 </script>
 
 <div id='ending'> </div>

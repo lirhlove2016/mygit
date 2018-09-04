@@ -249,8 +249,8 @@ function close_shots(obj) {
 </div>
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-09-03 19:15:39</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:00.944109</p>
+<p class='attribute'><strong>开始时间:</strong> 2018-09-04 18:48:47</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:00.950479</p>
 <p class='attribute'><strong>状态:</strong> 通过 1</p>
 
 <p class='description'>用例执行情况</p>
@@ -314,22 +314,22 @@ count 4
 ----正在进行接口测试，开始第1个请求---------------
 get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/farmlands/count  {'content-type': 'application/x-www-form-urlencoded'}
 status_code 200
-response {'errno': 21, 'errmsg': 'token not found'}
+response {'errmsg': 'token not found', 'errno': 21}
 1、根据id获取地块:测试失败
 ----正在进行接口测试，开始第2个请求---------------
 post http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUser/loginOrReg checkCode=9331&amp;mobilePhone=18301212965 {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
 status_code 200
-response {'errno': 13, 'data': None, 'errmsg': '验证码错误或已过期'}
+response {'errmsg': '验证码错误或已过期', 'data': None, 'errno': 13}
 2、bdh用户登录:测试失败
 ----正在进行接口测试，开始第3个请求---------------
 get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUserWallet  {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
 status_code 200
-response {'errno': 21, 'errmsg': 'token not found'}
+response {'errmsg': 'token not found', 'errno': 21}
 3、bdh获取钱包余额:测试失败
 ----正在进行接口测试，开始第4个请求---------------
 get http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUser/checkCode ip=192.168.1.15&amp;mobilePhone=18301212965 {'content-type': 'application/x-www-form-urlencoded;charset=utf-8'}
 status_code 200
-response {'errno': 13, 'data': None, 'errmsg': '24小时内同一手机号发送次数超过限制'}
+response {'errmsg': '24小时内同一手机号发送次数超过限制', 'data': None, 'errno': 13}
 4、bdh获取验证码:测试失败
 
 
