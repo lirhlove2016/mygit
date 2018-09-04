@@ -20,15 +20,21 @@ class  ApiRequest(object):
         #print('start request-----------------------------------------------')
         #print(self.method,self.url,self.data,self.headers)
         
-        if self.method=='post':
-            
+        if self.method=='post':            
             r=requests.post(self.url,data=self.data,headers=self.headers)
             return r
-
         elif self.method=='get':
             r=requests.get(self.url,params=self.data,headers=self.headers)
             return r
-
+        elif self.method=='put':
+            r=requests.put(self.url,params=self.data,headers=self.headers)
+            return r
+        elif self.method=='delete':
+            r=requests.delete(self.url,headers=self.headers)
+            return r
+        else:
+            print('method is error')
+        
     def get_code(self):
         #获取返回接口的状态码
         code=self.api_request().status_code

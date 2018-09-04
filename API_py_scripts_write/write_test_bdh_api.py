@@ -3,19 +3,13 @@ import json
 import unittest
 import time
 import os
-
-#import HTMLTestRunner
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
 import conf
 
-#from common import writeexcel
-
-testxlsx = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
-newfile=r"E:\mysoft\myworksapce\project\API_py_scripts_demo\case\result\result.xlsx"
-
 testxlsx=conf.testxlsx
 newfile=conf.newfile
+print(testxlsx)
 
 class testAPI(unittest.TestCase):
 
@@ -30,7 +24,7 @@ class testAPI(unittest.TestCase):
         print(key_names)
         reals=[]
         count=len(data)
-        print('count',count)
+        print('总接口数',count)
         suc_num=0
         for i in range(len(data)):
             print('----正在进行接口测试，开始第%d个请求---------------'%(i+1))
@@ -55,14 +49,14 @@ class testAPI(unittest.TestCase):
             ex_result=datalist['expectedresult']
             
             if ex_result in res:
-                print('{0}、{1}:测试成功。json数据为:{2}'.format(i + 1, datalist['casename'], r.json))
+                print('第{0}接口 {1}:测试成功。json数据为:{2}'.format(i + 1, datalist['casename'], r.json))
                 datalist['result']='测试成功'
                 suc_num=suc_num+1
             else:
-                print('{0}、{1}:测试失败'.format(i + 1, datalist['casename']))
+                print('第{0}接口 {1}:测试失败。json数据为:{2}'.format(i + 1, datalist['casename'],r.json)))
                 datalist['result']='测试失败'
 
-            #报错所有数据
+            #保存所有数据
             reals.append(datalist)
             #print(datalist)
 
@@ -70,14 +64,12 @@ class testAPI(unittest.TestCase):
         self.datas=reals
         self.key_names=key_names
         #写入excel
-        self.write_eccel_datas()
-        
+        self.write_eccel_datas()       
         return suc_num,reals,key_names
 
     def write_eccel_datas(self):
-        write_excel(newfile,self.datas,self.key_names)
-                      
-
+        wr.write_excel(newfile,self.datas,self.key_names)
+                     
     
 if __name__=="__main__":
     unittest.main()

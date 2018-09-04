@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
+#1
+testxlsx = r"D:\workdtation\debug\API_py_scripts_write\case\myapidata.xlsx"
+newfile=r"D:\workdtation\debug\API_py_scripts_write\result\result.xls"
 
-testxlsx = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
-newfile=r"E:\mysoft\myworksapce\project\API_py_scripts_demo\case\result\result.xlsx"
+#2
+'''
 
-curpath = os.path.dirname(__file__)
-#testxlsx = os.path.join(curpath,"/case/myapidata.xlsx")
-#newfile=os.path.join(curpath,"\\case\\result","reslit.xlsx")
-
+curpath=os.path.split(os.path.realpath(__file__))[0]
+testxlsx=curpath+"\\case"+"\\myapidata.xlsx"                     
+newfile=curpath+"\\result"+"\\result.xlsx"                    
+#print(curpath,testxlsx,newfile)
+'''

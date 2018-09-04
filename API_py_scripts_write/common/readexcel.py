@@ -11,7 +11,7 @@ class ExcelUtil():
         self.rowNum = self.table.nrows
         # 获取总列数
         self.colNum = self.table.ncols
-
+    
     def dict_data(self):
         if self.rowNum <= 1:
             print("总行数小于1")
@@ -23,25 +23,27 @@ class ExcelUtil():
                 # 从第二行取对应values值
                 s['rowNum'] = i+1
                 
-                #print(s['rowNum'])
-                
+                #print(s['rowNum'])               
                 values = self.table.row_values(j)
                 for x in list(range(self.colNum)):
-                    s[self.keys[x]] = values[x]
+                    if self.keys[x]=='Id':
+                        s[self.keys[x]] = int(values[x])
+                    else:
+                        s[self.keys[x]] = values[x]
                 r.append(s)
                 j += 1
-                
+    
             return r,self.keys
         
 if __name__ == "__main__":
 
-    filepath = r"E:\mysoft\myworksapce\project\API_py_scripts\case\myapidata.xlsx"
+    filepath = r"D:\workdtation\debug\API_py_scripts_write\case\myapidata.xlsx"
     sheetName = "Sheet1"
     data= ExcelUtil(filepath,sheetName)
     datas,keys=data.dict_data()
     print('keys',keys)
     
-    print('datas',datas[0])
+    print('datas',datas)
     print(type(datas))
     
     print('url',datas[0]['url'])

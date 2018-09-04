@@ -8,7 +8,6 @@ import os
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
 
-
 testxlsx = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
 
 curpath = os.path.dirname(os.path.realpath(__file__))

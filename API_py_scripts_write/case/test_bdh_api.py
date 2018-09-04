@@ -3,19 +3,17 @@ import json
 import unittest
 import time
 import os
-
-#import HTMLTestRunner
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
+import conf
+'''
+testxlsx = r"D:\workdtation\debug\API_py_scripts_write\case\myapidata.xlsx"
+newfile=r"D:\workdtation\debug\API_py_scripts_write\result\result.xlsx"
 
-
-testxlsx = r"E:\mysoft\myworksapce\project\API_PY_scripts\case\myapidata.xlsx"
-newfile=r"E:\mysoft\myworksapce\project\API_py_scripts_demo\case\result\result.xlsx"
-
-curpath = os.path.dirname(os.path.realpath(__file__))
-#testxlsx = os.path.join(curpath,"myapidata.xlsx")
+#testxlsx=conf.testxlsx
+#newfile=conf.newfile
 print(testxlsx)
-
+'''
 class testAPI(unittest.TestCase):
 
     def setUp(self):
@@ -61,7 +59,7 @@ class testAPI(unittest.TestCase):
                 print('{0}、{1}:测试失败'.format(i + 1, datalist['casename']))
                 datalist['result']='测试失败'
 
-            #报错所有数据
+            #保存所有数据
             reals.append(datalist)
             #print(datalist)
 
