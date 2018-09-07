@@ -32,11 +32,13 @@ def write_excel(filepath,datas,names):
     d=[]
     for i in range(len(datas)):
         value=datas[i]
-        print('')
-        print("正在写入第{0}行，数据{1}".format(i+1,value)) 
+        #print("正在写入第{0}行，数据{1}".format(i+1,value)) 
         for j in range(len(names)):         
-            key=names[j]                 
-            strValue=str(value[key])               
+            key=names[j]
+            if key=='Id':
+                strValue=int(value[key])
+            else:
+                strValue=str(value[key])               
             sheet.write(i+1,j,strValue)       
 
         d.append(datas[i])                 

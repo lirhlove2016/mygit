@@ -33,11 +33,11 @@ class testAPI(unittest.TestCase):
             method=datalist['method']
             headers={}
             headers['content-type']=datalist['headers']
+            
             if datalist['tokenname']=='BDHAuthorization':
                 tokenname=datalist['tokenname']
                 headers[tokenname]=datalist['token']
-            
-            
+                        
             print("-------请求参数-----------------") 
             print(method)
             print(url)
@@ -54,8 +54,8 @@ class testAPI(unittest.TestCase):
             datalist['realresult']=r.json()
             #期望结果
             ex_result=datalist['expectedresult']
-            
-            if ex_result in res:
+            AC_result=datalist['realresult']
+            if ex_result in AC_result:
                 print('第{0}个接口，{1}:测试成功。\njson数据为:{2}'.format(i + 1, datalist['casename'], r.json()))
                 datalist['result']='测试成功'
                 suc_num=suc_num+1

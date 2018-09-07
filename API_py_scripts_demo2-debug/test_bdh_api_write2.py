@@ -6,20 +6,25 @@ import os
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
 import conf
+from common import HTMLTestRunner
 from common.writeexcel import write_excel
 
-#1
-#testxlsx = r"E:\mysoft\myworksapce\project\API_py_scripts_demo2\myapidata.xlsx"
-#2
-
+testxlsx = r"E:\mysoft\myworksapce\project\API_py_scripts_demo2\myapidata.xlsx"
 testxlsx=conf.testxlsx
 newfile=conf.newfile
 #print('test',testxlsx,newfile)
 
+#report
+curpath = os.path.dirname(os.path.realpath(__file__))
+report_path = os.path.join(curpath, "report")
+if not os.path.exists(report_path): os.mkdir(report_path)
+case_path = os.path.join(curpath, "case")
+
+
 class testAPI(unittest.TestCase):
 
-    def test_bdh_api(self):
-        #获取数据
+    def test_bdh_api_read(self):
+       #获取数据
         data,key_names= ExcelUtil(testxlsx).dict_data()
         #print(key_names)
         reals=[]
@@ -45,23 +50,18 @@ class testAPI(unittest.TestCase):
             print('header:',headers)
             print('data',datas)
 
-            print("-------返回参数-----------------") 
-            my_request=ApiRequest(method,url,datas,headers)
-            r=my_request.api_request()
+            print("-------返回参数-----------------")
+            #调用
+            r=self.get_request(method,url,datas,headers)
 
-            print('code',my_request.get_code())
+            print('code',r)
             print('response',r.json())
             res=r.json()
             datalist['realresult']=str(r.json())
             #期望结果
             ex_result=datalist['expectedresult']
             AC_result=datalist['realresult']
-            print('----------------debug--------------')
-            print(type(datalist['realresult']),type(ex_result))
-            print(ex_result,datalist['realresult'])
-            print(ex_result in datalist['realresult'])
-            
-            
+                        
             if ex_result in AC_result:
                 print('第{0}个接口，{1}:测试成功。\njson数据为:{2}'.format(i + 1, datalist['casename'], r.json()))
                 datalist['result']='测试成功'
@@ -72,15 +72,42 @@ class testAPI(unittest.TestCase):
 
             #保存所有数据
             reals.append(datalist)
+            return reals,key_names
+        
+    def get_request(self,method,url,datas,headers):
+            my_request=ApiRequest(method,url,datas,headers)
+            r=my_request.api_request()
+            return r
 
+    def test_bdh_api_writedata(self):
+        reals,key_names=self.test_bdh_api_read()
+        self.write_datas_api(reals,key_names)
+        
+    def write_datas_api(self,reals,key_names):        
         #write_datas
         print("-------正在写入数据，请等待-----------------") 
         write_excel(newfile,reals,key_names)
         return suc_num,reals,key_names
-        
+                
     
 if __name__=="__main__":
-    unittest.main()
+    #unittest.main()
+
+    #
+    suite = unittest.TestSuite()
+    suite.addTest(testAPI('test_bdh_api_writedata'))
+    now = time.strftime("%Y-%m-%d %M-%H_%M_%S", time.localtime(time.time()))           
+    htmlreport = report_path+r"/"+now+"_result.html"
+    print("测试报告生成地址：%s"% htmlreport)
+    fp = open(htmlreport, "wb")
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,
+                                               verbosity=2,
+                                               title="测试报告",
+                                               description="用例执行情况")
+    # 调用add_case函数返回值
+    runner.run(suite)
+    fp.close()
+
     
 
     
