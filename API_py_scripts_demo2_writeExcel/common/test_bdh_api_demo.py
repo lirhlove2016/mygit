@@ -6,18 +6,12 @@ import os
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
 import conf
-from common import HTMLTestRunner
+
 
 testxlsx = r"E:\mysoft\myworksapce\project\API_py_scripts_demo2\myapidata.xlsx"
+
 testxlsx=conf.testxlsx
 print(testxlsx)
-
-#report
-curpath = os.path.dirname(os.path.realpath(__file__))
-report_path = os.path.join(curpath, "report")
-if not os.path.exists(report_path): os.mkdir(report_path)
-case_path = os.path.join(curpath, "case")
-
 
 class testAPI(unittest.TestCase):
 
@@ -77,10 +71,6 @@ class testAPI(unittest.TestCase):
     
 if __name__=="__main__":
     unittest.main()
-
-
-    
-    
     
 
     

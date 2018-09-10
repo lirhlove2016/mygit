@@ -3,7 +3,7 @@
 import xlwt
 from  xlrd import *
 from xlutils.copy import copy
-from test_bdh_api_demo import testAPI
+
 
 
 def write_excel_m(old,newfile,datas,names):

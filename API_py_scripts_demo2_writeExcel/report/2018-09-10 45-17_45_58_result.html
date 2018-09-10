@@ -249,9 +249,9 @@ function close_shots(obj) {
 </div>
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-09-07 18:52:30</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:00.156932</p>
-<p class='attribute'><strong>状态:</strong> 错误 1</p>
+<p class='attribute'><strong>开始时间:</strong> 2018-09-10 17:45:58</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:00.214300</p>
+<p class='attribute'><strong>状态:</strong> 通过 1</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -284,56 +284,56 @@ function close_shots(obj) {
     <td>错误截图</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>testAPI</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     <td> </td>
 </tr>
 
-<tr id='ft1.1'>
-    <td class='errorCase'><div class='testcase'>test_bdh_api_writedata</div></td>
+<tr id='pt1.1'>
+    <td class='none'><div class='testcase'>test_bdh_api</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        错误</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: 接口总数 2
+pt1.1: 接口总数 2
 --正在进行接口测试，开始第1个请求---------------
 -------请求参数-----------------
 get
 http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/farmlands/count
-header: {'BDHAuthorization': 'A25nA3rWY6JSUe7hBTfmgOsGckPFbW8dRASuVNQg6aVzXEbIueroASUCHx4zoWFU+wRbJPLnq0TVU8ojlKciOysLqjOYnDzMCKDb92L', 'content-type': ''}
+header: {'BDHAuthorization': 'B94ftK1WY6JSUe7hBTfmgOsGckPFbW8dRASuVNQ52ag5f9pS//4V5E66NZNgQq9tnw2GwdcnZgG7Nz6SEv/klZB+VHjS3DzMCKDb92L', 'content-type': ''}
 data 
 -------返回参数-----------------
-code &lt;Response [200]&gt;
-response {'errno': 22, 'errmsg': 'user token check error'}
-第1个接口，根据id获取地块:测试失败。
-json数据为:{'errno': 22, 'errmsg': 'user token check error'}
+code 200
+response {'data': 107, 'errmsg': None, 'errno': 0}
+第1个接口，根据id获取地块:测试成功。
+json数据为:{'data': 107, 'errmsg': None, 'errno': 0}
+--正在进行接口测试，开始第2个请求---------------
+-------请求参数-----------------
+get
+http://dev01.bdhlan.com:8080/bdhsystem/farmplantend/plantUserWallet
+header: {'BDHAuthorization': 'B94ftK1WY6JSUe7hBTfmgOsGckPFbW8dRASuVNQ52ag5f9pS//4V5E66NZNgQq9tnw2GwdcnZgG7Nz6SEv/klZB+VHjS3DzMCKDb92L', 'content-type': ''}
+data 
+-------返回参数-----------------
+code 200
+response {'data': {'amount': 800.0, 'uid': '22'}, 'errmsg': None, 'errno': 0}
+第2个接口，bdh获取钱包余额:测试成功。
+json数据为:{'data': {'amount': 800.0, 'uid': '22'}, 'errmsg': None, 'errno': 0}
 -------正在写入数据，请等待-----------------
-Traceback (most recent call last):
-  File "E:\mysoft\myworksapce\project\API_py_scripts_demo2\test_bdh_api_write.py", line 84, in test_bdh_api_writedata
-    self.write_datas_api(reals,key_names)
-  File "E:\mysoft\myworksapce\project\API_py_scripts_demo2\test_bdh_api_write.py", line 89, in write_datas_api
-    write_excel(newfile,reals,key_names)
-  File "E:\mysoft\myworksapce\project\API_py_scripts_demo2\common\writeexcel.py", line 45, in write_excel
-    f.save(filepath)
-  File "C:\Python34\lib\site-packages\xlwt\Workbook.py", line 710, in save
-    doc.save(filename_or_stream, self.get_biff_data())
-  File "C:\Python34\lib\site-packages\xlwt\CompoundDoc.py", line 262, in save
-    f = open(file_name_or_filelike_obj, 'w+b')
-PermissionError: [Errno 13] Permission denied: 'E:\\mysoft\\myworksapce\\project\\API_py_scripts_demo2\\result.xls'
+write finished
 
 
         </pre>
@@ -347,15 +347,15 @@ PermissionError: [Errno 13] Permission denied: 'E:\\mysoft\\myworksapce\\project
 <tr id='total_row'>
     <td>统计</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td> </td>
     <td> </td>
 </tr>
 </table>
 <script>
-    drawCircle(0, 0, 1)
+    drawCircle(1, 0, 0)
 </script>
 
 <div id='ending'> </div>
