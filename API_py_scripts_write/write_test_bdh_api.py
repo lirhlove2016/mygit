@@ -5,7 +5,7 @@ import time
 import os
 from common.readexcel import ExcelUtil
 from common.Api_request import ApiRequest 
-import conf
+import conf.conf
 
 testxlsx=conf.testxlsx
 newfile=conf.newfile

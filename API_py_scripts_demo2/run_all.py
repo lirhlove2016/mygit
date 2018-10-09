@@ -8,6 +8,7 @@ curpath = os.path.dirname(os.path.realpath(__file__))
 report_path = os.path.join(curpath, "report")
 if not os.path.exists(report_path): os.mkdir(report_path)
 case_path = os.path.join(curpath, "case")
+
 def add_case(casepath=case_path, rule="test*.py"):
     '''加载所有的测试用例'''
     # 定义discover方法的参数
